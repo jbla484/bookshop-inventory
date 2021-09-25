@@ -4,8 +4,8 @@
 using namespace std;
 
 class Book {
-    //Public member functions
 public:
+    //Constructors
     Book() {
         this->bookName = "";
         this->authorName = "";
@@ -16,6 +16,7 @@ public:
         this->authorName = authorName;
         this->publishDate = publishDate;
     }
+    //Public member functions
     string GetBookName() {
         return this->bookName;
     }
@@ -46,6 +47,7 @@ private:
 
 class Books {
 public:
+    //Public member functions
     void SetBooks() {
 
         string name, author, publishDate;
@@ -74,6 +76,7 @@ public:
             books.at(i).print();
         }
     }
+    //Private data members
 private:
     vector<Book> books;
 
@@ -101,8 +104,10 @@ int main()
 
     cin >> response;
 
+    //Loop while response is not equal to 'q'
     while (response != 'q') {
 
+        //Add a book
         if (response == 'a') {
 
             theBooks.SetBooks();
@@ -111,6 +116,7 @@ int main()
             cin >> response;
             
         }
+        //Remove a book
         else if (response == 'r') {
 
             cout << "Enter the book name: ";
@@ -121,6 +127,7 @@ int main()
             cout << endl << "Enter another command: ";
             cin >> response;
         }
+        //Print a book
         else if (response == 'p') {
 
             theBooks.PrintBooks();
@@ -128,6 +135,5 @@ int main()
             cout << endl << "Enter another command: ";
             cin >> response;
         }
-
     }
 }
